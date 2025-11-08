@@ -61,7 +61,7 @@ jobs:
           VITE_API_URL: http://backend-service
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: frontend-build
           path: ./frontend/dist
@@ -93,7 +93,7 @@ jobs:
           npm audit --json > npm-audit.json || true
 
       - name: Upload npm audit results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: npm-audit-report
           path: ./frontend/npm-audit.json
@@ -107,7 +107,7 @@ jobs:
           out: 'dependency-check-report'
 
       - name: Upload Dependency Check Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report-frontend
           path: dependency-check-report

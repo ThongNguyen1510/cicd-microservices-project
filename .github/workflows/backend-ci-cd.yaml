@@ -62,7 +62,7 @@ jobs:
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-results
           path: ./backend/coverage
@@ -97,7 +97,7 @@ jobs:
           out: 'dependency-check-report'
 
       - name: Upload Dependency Check Report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
           path: dependency-check-report
@@ -107,7 +107,7 @@ jobs:
           dotnet list package --vulnerable --include-transitive 2>&1 | tee security-scan.log
           
       - name: Upload Security Scan Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: security-scan
           path: ./backend/security-scan.log
